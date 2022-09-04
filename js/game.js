@@ -28,6 +28,9 @@ let isVictory = function(myCells){
 			myCells[combinationsWin[i][1]].innerHTML === myCells[combinationsWin[i][2]].innerHTML &&
 			myCells[combinationsWin[i][0]].innerHTML !== ''
 		) {
+            myCells[combinationsWin[i][0]].classList.add('red');
+            myCells[combinationsWin[i][1]].classList.add('red');
+            myCells[combinationsWin[i][2]].classList.add('red');
 			return true;
 		}
     }
@@ -38,9 +41,9 @@ cells.forEach(cell =>{
         e.preventDefault();
         if((number > 3)&&(isVictory(cells))){
             if(number % 2 === 0){
-                alert('Игра окончена! Выйграли нолики!!');
+                setTimeout(alert('Игра окончена! Выйграли нолики!!'),0);
             } else{
-                alert('Игра окончена! Выйграли крестики!!');
+                setTimeout(alert('Игра окончена! Выйграли крестики!!'),0);
             }
             return;
         };
